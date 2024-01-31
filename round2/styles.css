@@ -48,7 +48,7 @@ animation: reveal .3s forwards ease-in;
 }
 
 #cursor:hover{
-  transform: rotate(10deg);
+  transform: rotate(-15deg);
 }
 
 h1 {
@@ -103,12 +103,12 @@ transition: .7s;
   position: relative;
   margin: 0 auto;
   margin-top: 18.5vh;
-  margin-bottom: 35vh;
+  height: 190vh;
 }
 
 .memory-game {
-  width: 65vw;
-  height: 80vh;
+  width: 70vw;
+  height: 100vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: center; /* Center the content horizontally */
@@ -119,8 +119,8 @@ transition: .7s;
 .memory-card {
   position: relative;
   margin: 2vh;
-  width: 210px;
-  height: 294px;
+  width: 180px;
+  height: 252px;
   transform-style: preserve-3d;
   transform: scale(1);
   transition: transform .5s;

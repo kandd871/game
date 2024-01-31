@@ -1,11 +1,21 @@
 document.addEventListener('DOMContentLoaded', function () {
     const cardsData = [
-        { "image": "img/q1.png", "framework": 1 },
+        { "image": "img/k1.png", "framework": 1 },
         { "image": "img/j3.png", "framework": 2 },
         { "image": "img/k4.png", "framework": 3 },
-        { "image": "img/q1.png", "framework": 1 },
+        { "image": "img/q1.png", "framework": 4 },
+        { "image": "img/j3.png", "framework": 5 },
+        { "image": "img/k4.png", "framework": 6 },
+        { "image": "img/k4.png", "framework": 7 },
+        { "image": "img/k4.png", "framework": 8 },
+        { "image": "img/k1.png", "framework": 1 },
         { "image": "img/j3.png", "framework": 2 },
         { "image": "img/k4.png", "framework": 3 },
+        { "image": "img/q1.png", "framework": 4 },
+        { "image": "img/j3.png", "framework": 5 },
+        { "image": "img/k4.png", "framework": 6 },
+        { "image": "img/k4.png", "framework": 7 },
+        { "image": "img/k4.png", "framework": 8 },
     ];
 
     const memoryGameContainer = document.querySelector('.memory-game');
@@ -43,7 +53,7 @@ updateTimer();
     function updateCount() {
     count++;
     const countElement = document.getElementById('count');
-    countElement.innerText = count + '/3';
+    countElement.innerText = count + '/8';
     setTimeout(() => {
     correctAudio.play();
      }, 500);
@@ -60,7 +70,7 @@ updateTimer();
         countElement.style.fontSize = '';
     }, 1000);
 
-    if (count === 3) {
+    if (count === 8) {
         showCongrats(); // Show congrats when all matches are made
         starsEffect();
         applauseAudio.play();
@@ -186,8 +196,8 @@ function updateScale(value) {
     consecutiveClicksZoomOut = -3;
   }
 }
-document.getElementById('zoomout').addEventListener('click', () => updateScale(-0.2));
-document.getElementById('zoomin').addEventListener('click', () => updateScale(0.2));
+document.getElementById('zoomout').addEventListener('click', () => updateScale(-0.145));
+document.getElementById('zoomin').addEventListener('click', () => updateScale(0.145));
 
 });
 
