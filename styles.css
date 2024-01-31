@@ -1,0 +1,44 @@
+body{
+	background: rgb(185,255,192);
+	background: linear-gradient(180deg, rgba(185,255,192,1) -29%, rgba(113,232,125,1) 0%, rgba(255,255,255,1) 33%, rgba(221,249,223,1) 57%, rgba(113,232,125,1) 100%);
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 100vh;
+}
+
+.firstletter {
+  font-family: "Mea Culpa", cursive;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 14vh;
+}
+
+.text{
+	text-align: center;
+	display: block;
+	font-family: 'PP Hatton', serif;
+	font-style: italic;
+}
+
+h1{
+	font-size: 8vh;
+	font-weight: 500;
+	margin-bottom: -2vh;
+}
+
+h2{
+	font-size: 4vh;
+	margin-bottom: -6vh;
+	font-weight: 500;
+}
+
+h3{
+	font-size: 2vh;
+	font-weight: 300;
+}
+
+
+.box{
+	display: flex;
+	justify-content: center;
+}

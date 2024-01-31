@@ -1,0 +1,252 @@
+/*
+font-family: "nautica", sans-serif;
+font-weight: 400;
+font-style: normal;
+*/
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  font-family: 'PP Hatton', serif;
+/*  background: #71E87D;*/
+background: rgb(185,255,192);
+background: linear-gradient(180deg, rgba(185,255,192,1) -29%, rgba(113,232,125,1) 0%, rgba(255,255,255,1) 33%, rgba(221,249,223,1) 57%, rgba(113,232,125,1) 100%);
+opacity: 0;
+animation: reveal .3s forwards ease-in;
+}
+
+.header {
+  display: inline-flex;
+  justify-content: space-between;
+  padding: 1vh 2vw 1vh 2vw;
+  background: #F5F8E8;
+  z-index: 100;
+  width: 100vw;
+  position: fixed;
+  border-bottom: 1px dotted black;
+  vertical-align: center;
+  align-items: center;
+}
+
+#home>a{ 
+  font-size: 10vh;
+  text-decoration: none;
+}
+
+#home{
+    z-index: 1000;
+    display: block;
+    align-items: center;
+    position: relative;
+    margin-bottom: -4vh;
+}
+
+#cursor:hover{
+  transform: rotate(10deg);
+}
+
+h1 {
+  font-style: italic;
+  font-weight: 500;
+  font-size: 7vh;
+  margin-bottom: -2vh;
+  text-decoration: underline;
+}
+
+h2 {
+  font-style: italic;
+  font-weight: 300;
+  font-size: 4vh;
+}
+
+.round {
+  text-align: center;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  display: block;
+  justify-content: center;
+}
+
+#timer {
+  display: flex;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid black;
+  width: 5vw;
+  padding: .1rem;
+  text-align: center;
+  margin-left: auto;
+}
+
+#count {
+  font-size: 7vh;
+  display: flex;
+  justify-content: right;
+  margin-top: vh;
+/*  text-shadow: 0px 0px 25px #84DD36;*/
+transition: .7s;
+}
+
+#container{
+  display: flex;
+}
+
+.cardContainer {
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  margin-top: 18.5vh;
+  margin-bottom: 35vh;
+}
+
+.memory-game {
+  width: 65vw;
+  height: 80vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center the content horizontally */
+  align-items: center;
+  perspective: 1000px;
+}
+
+.memory-card {
+  position: relative;
+  margin: 2vh;
+  width: 210px;
+  height: 294px;
+  transform-style: preserve-3d;
+  transform: scale(1);
+  transition: transform .5s;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.9); 
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.9);
+  border-radius: 2vh;
+}
+
+.memory-card:hover{
+  cursor: alias;
+}
+
+.front-face,
+.back-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 2vh;
+  backface-visibility: hidden;
+}
+
+.back-face:hover{
+    filter: brightness(90%);
+}
+
+.memory-card:active {
+  transform: scale(0.97);
+  transition: transform .2s;
+}
+
+.memory-card.flip {
+  transform: rotateY(180deg);
+}
+
+.front-face {
+  transform: rotateY(180deg);
+}
+
+.buttons {
+/*  align-self: flex-start; */
+  margin: 2vw;
+/*  margin-top: 20vh;*/
+  z-index: 200;
+}
+
+
+#zoomout,#zoomin{
+  position: fixed;
+}
+
+#zoomin{
+  left: 94.5vw;
+  top: 21%;
+}
+
+#zoomout{
+  left: 2vw;
+  top: 21%;
+}
+
+button {
+  width: 3.5vw;
+  height: 4.5vh;
+  font-size: 4vh;
+  background: #F5F8E8;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+button:hover {
+  color: #F5F8E8;
+  background: black;
+}
+
+#zoomout:hover{
+  cursor: zoom-out;
+}
+
+#zoomin:hover{
+  cursor: zoom-in;
+}
+
+#congrats {
+  align-items: center; /* Add this line to center-align items vertically */
+  justify-content: center;
+  text-align: center;
+  font-size: 6.5vw;
+  position: fixed;
+  z-index: 200;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center horizontally and vertically */
+  background: #F5F8E8;
+  width: 95vw;
+  height: 55vh;
+  border: 1px solid black;
+  border-radius: 3vh;
+  visibility: hidden;
+  opacity: 0;
+  transition: .45s;
+ -webkit-box-shadow: 0px 0px 15px 0px rgba(1,134,45,0.89); 
+box-shadow: 0px 0px 15px 0px rgba(1,134,45,0.89);
+}
+#cursor{
+  width: 9vw;
+}
+
+
+.firstletter {
+  font-family: "Mea Culpa", cursive;
+  font-weight: 300;
+  font-style: normal;
+}
+#r{
+  font-size: 8vh;
+}
+
+#link{
+  font-size: 5vw;
+}
+
+@keyframes reveal{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
