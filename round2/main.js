@@ -1,26 +1,25 @@
 document.addEventListener('DOMContentLoaded', function () {
     const cardsData = [
-        { "image": "img/k1.png", "framework": 1 },
-        { "image": "img/j3.png", "framework": 2 },
-        { "image": "img/k4.png", "framework": 3 },
-        { "image": "img/q1.png", "framework": 4 },
-        { "image": "img/j3.png", "framework": 5 },
-        { "image": "img/k4.png", "framework": 6 },
-        { "image": "img/k4.png", "framework": 7 },
-        { "image": "img/k4.png", "framework": 8 },
-        { "image": "img/k1.png", "framework": 1 },
-        { "image": "img/j3.png", "framework": 2 },
-        { "image": "img/k4.png", "framework": 3 },
-        { "image": "img/q1.png", "framework": 4 },
-        { "image": "img/j3.png", "framework": 5 },
-        { "image": "img/k4.png", "framework": 6 },
-        { "image": "img/k4.png", "framework": 7 },
-        { "image": "img/k4.png", "framework": 8 },
+        { "image": "img/21.png", "framework": 1 },
+        { "image": "img/33.png", "framework": 2 },
+        { "image": "img/42.png", "framework": 3 },
+        { "image": "img/54.png", "framework": 4 },
+        { "image": "img/q3.png", "framework": 5 },
+        { "image": "img/k1.png", "framework": 6 },
+        { "image": "img/102.png", "framework": 7 },
+        { "image": "img/a4.png", "framework": 8 },
+        { "image": "img/21.png", "framework": 1 },
+        { "image": "img/33.png", "framework": 2 },
+        { "image": "img/42.png", "framework": 3 },
+        { "image": "img/54.png", "framework": 4 },
+        { "image": "img/q3.png", "framework": 5 },
+        { "image": "img/k1.png", "framework": 6 },
+        { "image": "img/102.png", "framework": 7 },
+        { "image": "img/a4.png", "framework": 8 }
     ];
 
     const memoryGameContainer = document.querySelector('.memory-game');
     const cards = document.querySelectorAll('.memory-card');
-
     let hasFlippedCard = false;
     let lockBoard = false;
     let firstCard, secondCard;
@@ -28,9 +27,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
    let timerSeconds = 0;
     let timerInterval;
-    const applauseAudio = new Audio('applause.mp3');
-    const flipAudio = new Audio('flip.mp3');
-    const correctAudio = new Audio('correct.mp3');
+    const applauseAudio = new Audio('../applause.mp3');
+    const flipAudio = new Audio('../flip.mp3');
+    const correctAudio = new Audio('../correct.mp3');
+    const jazzAudio = new Audio('../jazz.mp3');
+
 
 function updateTimer() {
     timerInterval = setInterval(() => {
@@ -127,6 +128,7 @@ updateTimer();
             secondCard.classList.remove('flip');
             flipAudio.play();
             resetBoard();
+            addRandomSpark();
         }, 1500);
     }
 
@@ -198,6 +200,76 @@ function updateScale(value) {
 }
 document.getElementById('zoomout').addEventListener('click', () => updateScale(-0.145));
 document.getElementById('zoomin').addEventListener('click', () => updateScale(0.145));
+
+document.addEventListener('mouseover', function () {
+   jazzAudio.volume = 0.15;
+    jazzAudio.play(); // This line is fine if triggered by user interaction
+});
+
+    let soundButton = document.getElementById('sound');
+    let muteButton = document.getElementById('mute');
+
+    soundButton.addEventListener('click', () => {
+        muteAllAudio();
+        soundButton.style.display = 'none';
+        muteButton.style.display = 'block';
+    });
+
+    muteButton.addEventListener('click', () => {
+        unmuteAllAudio();
+        muteButton.style.display = 'none';
+        soundButton.style.display = 'block';
+    });
+
+    function muteAllAudio() {
+        applauseAudio.muted = true;
+        flipAudio.muted = true;
+        correctAudio.muted = true;
+        jazzAudio.muted = true;
+    }
+
+    function unmuteAllAudio() {
+        applauseAudio.muted = false;
+        flipAudio.muted = false;
+        correctAudio.muted = false;
+        jazzAudio.muted = false;
+    }
+
+function addRandomSpark() {
+    const sparkImage = document.createElement('img');
+    sparkImage.src = '../spark.png'; // Change this to your actual spark image URL
+    sparkImage.classList.add('spark');
+    sparkImage.alt = 'Spark';
+    sparkImage.style.position = 'fixed';
+    sparkImage.style.opacity = '0.8';
+    sparkImage.style.width = getRandomSize();
+    sparkImage.style.height = getRandomSize();
+    sparkImage.style.top = getRandomPosition(window.innerHeight);
+    sparkImage.style.left = getRandomPosition(window.innerWidth,200);
+    sparkImage.style.transform = `rotate(${getRandomRotation()}deg)`;
+    document.body.appendChild(sparkImage);
+}
+
+function getRandomSize() {
+    return Math.floor(Math.random() * 10) + 4 + 'vw'; 
+}
+
+function getRandomPosition(max, centerDistance) {
+    const center = max / 2;
+    const minDistance = center - centerDistance;
+    const maxDistance = center + centerDistance;
+    
+    let position;
+    do {
+        position = Math.random() * max;
+    } while (position >= minDistance && position <= maxDistance);
+
+    return position + 'px';
+}
+
+function getRandomRotation() {
+    return Math.floor(Math.random() * 360);
+}
 
 });
 

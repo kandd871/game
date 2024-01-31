@@ -29,3 +29,4 @@ var starsEffect = function() {
   setTimeout(shoot, 1500);
   setTimeout(shoot, 2000);
 };
+

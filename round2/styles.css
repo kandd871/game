@@ -26,7 +26,7 @@ animation: reveal .3s forwards ease-in;
   justify-content: space-between;
   padding: 1vh 2vw 1vh 2vw;
   background: #F5F8E8;
-  z-index: 100;
+  z-index: 200;
   width: 100vw;
   position: fixed;
   border-bottom: 1px dotted black;
@@ -40,7 +40,7 @@ animation: reveal .3s forwards ease-in;
 }
 
 #home{
-    z-index: 1000;
+    z-index: 500;
     display: block;
     align-items: center;
     position: relative;
@@ -48,7 +48,7 @@ animation: reveal .3s forwards ease-in;
 }
 
 #cursor:hover{
-  transform: rotate(-15deg);
+  transform: rotate(10deg);
 }
 
 h1 {
@@ -69,9 +69,10 @@ h2 {
   text-align: center;
   width: 100%;
   position: fixed;
-  left: 0;
+/*  left: 0;*/
   display: block;
   justify-content: center;
+  margin-left: -2vw;
 }
 
 #timer {
@@ -103,12 +104,13 @@ transition: .7s;
   position: relative;
   margin: 0 auto;
   margin-top: 18.5vh;
-  height: 190vh;
+  margin-bottom: 35vh;
+/*  margin-left: 2vw;*/
 }
 
 .memory-game {
   width: 70vw;
-  height: 100vh;
+  height: 110vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: center; /* Center the content horizontally */
@@ -163,7 +165,6 @@ transition: .7s;
 /*  align-self: flex-start; */
   margin: 2vw;
 /*  margin-top: 20vh;*/
-  z-index: 200;
 }
 
 
@@ -187,12 +188,14 @@ button {
   font-size: 4vh;
   background: #F5F8E8;
   border-radius: 50%;
-  border: 1px solid black;
+  color: gray;
+  border: 1px solid gray;
+  z-index: 300;
 }
 
 button:hover {
   color: #F5F8E8;
-  background: black;
+  background: gray;
 }
 
 #zoomout:hover{
@@ -203,13 +206,42 @@ button:hover {
   cursor: zoom-in;
 }
 
+#mute, #sound{
+  position: fixed;
+  top: 93%;
+  right: 2vw;
+  width: 3vw;
+  height: 4vh;
+  background: none;
+  border: none;
+  margin: ;
+}
+
+#mute{
+  display: none;
+}
+
+.soundbuttons:hover{
+  cursor: pointer;
+  z-index: 150;
+}
+
+#mute>img{
+  width: 1.5vw;
+}
+
+#sound>img{
+  width: 1.5vw; 
+}
+
+
 #congrats {
   align-items: center; /* Add this line to center-align items vertically */
   justify-content: center;
   text-align: center;
   font-size: 6.5vw;
   position: fixed;
-  z-index: 200;
+  z-index: 400;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); /* Center horizontally and vertically */
@@ -228,6 +260,9 @@ box-shadow: 0px 0px 15px 0px rgba(1,134,45,0.89);
   width: 9vw;
 }
 
+.spark{
+  z-index: 100;
+}
 
 .firstletter {
   font-family: "Mea Culpa", cursive;
@@ -240,6 +275,11 @@ box-shadow: 0px 0px 15px 0px rgba(1,134,45,0.89);
 
 #link{
   font-size: 5vw;
+  color: gray;
+}
+
+#link:hover{
+  color: #71E87D;
 }
 
 @keyframes reveal{

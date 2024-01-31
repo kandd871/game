@@ -18,10 +18,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
    let timerSeconds = 0;
     let timerInterval;
-    const applauseAudio = new Audio('applause.mp3');
-    const flipAudio = new Audio('flip.mp3');
-    const correctAudio = new Audio('correct.mp3');
-    const jazzAudio = new Audio('jazz.mp3');
+    const applauseAudio = new Audio('../applause.mp3');
+    const flipAudio = new Audio('../flip.mp3');
+    const correctAudio = new Audio('../correct.mp3');
+    const jazzAudio = new Audio('../jazz.mp3');
 
 
 function updateTimer() {
@@ -228,11 +228,11 @@ document.addEventListener('mouseover', function () {
 
 function addRandomSpark() {
     const sparkImage = document.createElement('img');
-    sparkImage.src = 'spark.png'; // Change this to your actual spark image URL
+    sparkImage.src = '../spark.png'; // Change this to your actual spark image URL
     sparkImage.classList.add('spark');
     sparkImage.alt = 'Spark';
     sparkImage.style.position = 'fixed';
-    sparkImage.style.opacity = '0.75';
+    sparkImage.style.opacity = '0.8';
     sparkImage.style.width = getRandomSize();
     sparkImage.style.height = getRandomSize();
     sparkImage.style.top = getRandomPosition(window.innerHeight);
