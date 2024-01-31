@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title></title>
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,10 +14,32 @@
 <div class="text">
 <h2>the memory game:</h2>
 <h1><span class="firstletter">D</span>rithi <span class="firstletter">K</span>andoor Edition</h1>
-<h3>do u even know me????</h3>
+<div class="box">
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-face front-face">
+                    <!-- Front face content, e.g., image or text -->
+                    <div class="img">
+                        <img src="back.png" alt="Front Face Image">
+                    </div>
+                </div>
+                <div class="card-face back-face">
+                    <!-- Back face content, e.g., video -->
+                    <div class="vid">
+                        <video id="video" autoplay loop muted>
+                            <source src="lose.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<h3>do u even know me?</h3>
 </div>
 <div class="box">
 <a href="round1/index.html">play</a>
 </div>
+<script type="text/javascript" src='main.js'></script>
 </body>
 </html>

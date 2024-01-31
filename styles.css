@@ -1,44 +1,168 @@
-body{
-	background: rgb(185,255,192);
-	background: linear-gradient(180deg, rgba(185,255,192,1) -29%, rgba(113,232,125,1) 0%, rgba(255,255,255,1) 33%, rgba(221,249,223,1) 57%, rgba(113,232,125,1) 100%);
-	background-size: cover;
-	background-repeat: no-repeat;
-	height: 100vh;
+body {
+            /* Your existing body styles */
+            background: rgb(185, 255, 192);
+            background: linear-gradient(180deg, rgba(185, 255, 192, 1) -29%, rgba(113, 232, 125, 1) 0%, rgba(255, 255, 255, 1) 33%, rgba(221, 249, 223, 1) 57%, rgba(113, 232, 125, 1) 100%);
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100vh;
+            margin-top: 5vh;
+           
+        }
+
+        /* Your existing styles */
+
+        .firstletter {
+            font-family: "Mea Culpa", cursive;
+            font-weight: 300;
+            font-style: normal;
+            font-size: 14vh;
+        }
+
+        .text {
+            text-align: center;
+            display: block;
+            font-family: 'PP Hatton', serif;
+            font-style: italic;
+        }
+
+        a{
+        	text-decoration: none;
+        	border-radius: 50%;
+        	color: gray;
+        	border: .75px solid gray;
+        	padding: .35rem;
+        	padding-left: .75rem;
+        	padding-right: .75rem;
+        	background: #F5F8E8;
+        	font-family: 'PP Hatton', serif;
+        	font-style: italic;
+        	font-size: 2.5vh;
+        	opacity: 0;
+        	animation: reveal2 .9s forwards ease-in-out;
+        	animation-delay: .35s;
+        }
+
+        a:hover{
+        	color: #F5F8E8;
+        	background: gray;
+        	cursor: pointer;
+        	text-decoration: underline;
+        }
+
+        h1 {
+            font-size: 8vh;
+            font-weight: 500;
+            margin-bottom: -2vh;
+            color: #F5F8E8;
+            -webkit-text-stroke: .75px black;
+        }
+
+        h2 {
+            font-size: 4vh;
+            margin-bottom: -6vh;
+            font-weight: 500;
+            text-decoration: underline;
+        }
+
+        h3 {
+            font-size: 2.5vh;
+            font-weight: 300;
+            animation: reveal .5s forwards ease-in-out;
+            color: gray;
+            margin-bottom: -6vh;
+        }
+
+        .box {
+            display: flex;
+            justify-content: center;
+            margin-top: 10vh;
+
+        }
+
+        .card {
+            position: relative;
+            perspective: 1000px;
+            animation: reveal .5s forwards ease-in-out;
+        }
+
+        .card-inner {
+            width: 15vw;
+            height: 21vw; /* Adjust as needed */
+            transform-style: preserve-3d;
+            transition: transform 0.5s;
+        }
+
+        .card:hover .card-inner {
+            transform: rotateY(180deg);
+            cursor: alias;
+        }
+
+        .card-face {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+        }
+
+        .front-face {
+	            width: 15vw;
+        }
+
+        .back-face {
+            transform: rotateY(180deg);
+
+        }
+
+
+        .img>img{
+        	width: 15vw;
+        	border-radius: 2vh;
+        	-webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.9); 
+  					box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.9);
+        }
+
+        .vid {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #video {
+            border-radius: 2vh;
+            width: 14.9945vw;
+/*            height: 21vw;*/
+            -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.9); 
+  					box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.9);
+        }
+
+        @keyframes reveal{
+  0%{
+    opacity: 0;
+    transform: rotate(7deg);
+  }
+  60%{
+    opacity: 1;
+    transform: rotate(-3deg);
+  }
+  100%{
+    opacity: 1;
+    transform: rotate(0deg);
+  }
 }
 
-.firstletter {
-  font-family: "Mea Culpa", cursive;
-  font-weight: 300;
-  font-style: normal;
-  font-size: 14vh;
-}
+       @keyframes reveal2{
+  0%{
+    opacity: 0;
+    transform: scale(2.3) rotate(-10deg);
 
-.text{
-	text-align: center;
-	display: block;
-	font-family: 'PP Hatton', serif;
-	font-style: italic;
-}
-
-h1{
-	font-size: 8vh;
-	font-weight: 500;
-	margin-bottom: -2vh;
-}
-
-h2{
-	font-size: 4vh;
-	margin-bottom: -6vh;
-	font-weight: 500;
-}
-
-h3{
-	font-size: 2vh;
-	font-weight: 300;
-}
-
-
-.box{
-	display: flex;
-	justify-content: center;
+  }
+  60%{
+    opacity: 1;
+    transform: scale(1) rotate(20deg);
+  }
+  100%{
+    opacity: 1;
+    transform: scale(1.75);
+  }
 }

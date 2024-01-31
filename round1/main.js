@@ -21,6 +21,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const applauseAudio = new Audio('applause.mp3');
     const flipAudio = new Audio('flip.mp3');
     const correctAudio = new Audio('correct.mp3');
+    const jazzAudio = new Audio('jazz.mp3');
+
 
 function updateTimer() {
     timerInterval = setInterval(() => {
@@ -117,6 +119,7 @@ updateTimer();
             secondCard.classList.remove('flip');
             flipAudio.play();
             resetBoard();
+            addRandomSpark();
         }, 1500);
     }
 
@@ -188,6 +191,76 @@ function updateScale(value) {
 }
 document.getElementById('zoomout').addEventListener('click', () => updateScale(-0.2));
 document.getElementById('zoomin').addEventListener('click', () => updateScale(0.2));
+
+document.addEventListener('mouseover', function () {
+   jazzAudio.volume = 0.15;
+    jazzAudio.play(); // This line is fine if triggered by user interaction
+});
+
+    let soundButton = document.getElementById('sound');
+    let muteButton = document.getElementById('mute');
+
+    soundButton.addEventListener('click', () => {
+        muteAllAudio();
+        soundButton.style.display = 'none';
+        muteButton.style.display = 'block';
+    });
+
+    muteButton.addEventListener('click', () => {
+        unmuteAllAudio();
+        muteButton.style.display = 'none';
+        soundButton.style.display = 'block';
+    });
+
+    function muteAllAudio() {
+        applauseAudio.muted = true;
+        flipAudio.muted = true;
+        correctAudio.muted = true;
+        jazzAudio.muted = true;
+    }
+
+    function unmuteAllAudio() {
+        applauseAudio.muted = false;
+        flipAudio.muted = false;
+        correctAudio.muted = false;
+        jazzAudio.muted = false;
+    }
+
+function addRandomSpark() {
+    const sparkImage = document.createElement('img');
+    sparkImage.src = 'spark.png'; // Change this to your actual spark image URL
+    sparkImage.classList.add('spark');
+    sparkImage.alt = 'Spark';
+    sparkImage.style.position = 'fixed';
+    sparkImage.style.opacity = '0.75';
+    sparkImage.style.width = getRandomSize();
+    sparkImage.style.height = getRandomSize();
+    sparkImage.style.top = getRandomPosition(window.innerHeight);
+    sparkImage.style.left = getRandomPosition(window.innerWidth,200);
+    sparkImage.style.transform = `rotate(${getRandomRotation()}deg)`;
+    document.body.appendChild(sparkImage);
+}
+
+function getRandomSize() {
+    return Math.floor(Math.random() * 10) + 4 + 'vw'; 
+}
+
+function getRandomPosition(max, centerDistance) {
+    const center = max / 2;
+    const minDistance = center - centerDistance;
+    const maxDistance = center + centerDistance;
+    
+    let position;
+    do {
+        position = Math.random() * max;
+    } while (position >= minDistance && position <= maxDistance);
+
+    return position + 'px';
+}
+
+function getRandomRotation() {
+    return Math.floor(Math.random() * 360);
+}
 
 });
 
