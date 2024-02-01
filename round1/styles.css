@@ -79,8 +79,9 @@ h2 {
   display: flex;
   justify-content: center;
   border-radius: 50%;
-  border: 1px solid black;
+  border: 1px solid gray;
   width: 5vw;
+  color: gray;
   padding: .1rem;
   text-align: center;
   margin-left: auto;
@@ -191,6 +192,8 @@ button {
   color: gray;
   border: 1px solid gray;
   z-index: 300;
+  cursor: pointer;
+  transition: .2s;
 }
 
 button:hover {
@@ -234,9 +237,13 @@ button:hover {
   width: 1.5vw; 
 }
 
-
+p{
+  margin-bottom: 4vh;
+}
 #congrats {
-  align-items: center; /* Add this line to center-align items vertically */
+  display: flex;
+  flex-direction: column; /* Set flex-direction to column */
+  align-items: center;
   justify-content: center;
   text-align: center;
   font-size: 6.5vw;
@@ -244,18 +251,20 @@ button:hover {
   z-index: 400;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* Center horizontally and vertically */
+  transform: translate(-50%, -50%);
   background: #F5F8E8;
   width: 95vw;
   height: 55vh;
   border: 1px solid black;
   border-radius: 3vh;
-  visibility: hidden;
-  opacity: 0;
+   visibility: hidden;
+  opacity: 0; 
   transition: .45s;
- -webkit-box-shadow: 0px 0px 15px 0px rgba(1,134,45,0.89); 
-box-shadow: 0px 0px 15px 0px rgba(1,134,45,0.89);
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(1, 134, 45, 0.89);
+  box-shadow: 0px 0px 15px 0px rgba(1, 134, 45, 0.89);
+  line-height: 1.1;
 }
+
 #cursor{
   width: 9vw;
 }
@@ -278,8 +287,12 @@ box-shadow: 0px 0px 15px 0px rgba(1,134,45,0.89);
   color: gray;
 }
 
+#link .firstletter{
+  font-size: 6vw;
+}
+
 #link:hover{
-  color: #71E87D;
+  color: #a2cffa;
 }
 
 @keyframes reveal{

@@ -79,6 +79,11 @@ body {
 
         }
 
+        .play:hover{
+            transform: rotate(-15deg);
+            transition: .25s;
+        }
+
         .card {
             position: relative;
             perspective: 1000px;

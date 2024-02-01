@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const cardsData = [
         { "image": "img/21.png", "framework": 1 },
         { "image": "img/33.png", "framework": 2 },
-        { "image": "img/42.png", "framework": 3 },
+        { "image": "img/j2.png", "framework": 3 },
         { "image": "img/54.png", "framework": 4 },
         { "image": "img/q3.png", "framework": 5 },
         { "image": "img/k1.png", "framework": 6 },
@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
         { "image": "img/a4.png", "framework": 8 },
         { "image": "img/21.png", "framework": 1 },
         { "image": "img/33.png", "framework": 2 },
-        { "image": "img/42.png", "framework": 3 },
+        { "image": "img/j2.png", "framework": 3 },
         { "image": "img/54.png", "framework": 4 },
         { "image": "img/q3.png", "framework": 5 },
         { "image": "img/k1.png", "framework": 6 },
@@ -244,28 +244,29 @@ function addRandomSpark() {
     sparkImage.style.opacity = '0.8';
     sparkImage.style.width = getRandomSize();
     sparkImage.style.height = getRandomSize();
-    sparkImage.style.top = getRandomPosition(window.innerHeight);
-    sparkImage.style.left = getRandomPosition(window.innerWidth,200);
+    sparkImage.style.top = getRandomPosition(window.innerHeight, 200, 100);
+    sparkImage.style.left = getRandomPosition(window.innerWidth, 300, 125);
     sparkImage.style.transform = `rotate(${getRandomRotation()}deg)`;
     document.body.appendChild(sparkImage);
 }
 
 function getRandomSize() {
-    return Math.floor(Math.random() * 10) + 4 + 'vw'; 
+    return Math.floor(Math.random() * 6) + 4 + 'vw'; 
 }
 
-function getRandomPosition(max, centerDistance) {
+function getRandomPosition(max, centerDistance, minDistanceFromCenter) {
     const center = max / 2;
     const minDistance = center - centerDistance;
     const maxDistance = center + centerDistance;
-    
+
     let position;
     do {
         position = Math.random() * max;
-    } while (position >= minDistance && position <= maxDistance);
+    } while (position >= minDistance && position <= maxDistance && Math.abs(position - center) < minDistanceFromCenter);
 
     return position + 'px';
 }
+
 
 function getRandomRotation() {
     return Math.floor(Math.random() * 360);

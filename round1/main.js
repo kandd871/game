@@ -226,7 +226,7 @@ document.addEventListener('mouseover', function () {
         jazzAudio.muted = false;
     }
 
-function addRandomSpark() {
+    function addRandomSpark() {
     const sparkImage = document.createElement('img');
     sparkImage.src = '../spark.png'; // Change this to your actual spark image URL
     sparkImage.classList.add('spark');
@@ -235,33 +235,33 @@ function addRandomSpark() {
     sparkImage.style.opacity = '0.8';
     sparkImage.style.width = getRandomSize();
     sparkImage.style.height = getRandomSize();
-    sparkImage.style.top = getRandomPosition(window.innerHeight);
-    sparkImage.style.left = getRandomPosition(window.innerWidth,200);
+    sparkImage.style.top = getRandomPosition(window.innerHeight, 200, 100);
+    sparkImage.style.left = getRandomPosition(window.innerWidth, 300, 125);
     sparkImage.style.transform = `rotate(${getRandomRotation()}deg)`;
     document.body.appendChild(sparkImage);
 }
 
 function getRandomSize() {
-    return Math.floor(Math.random() * 10) + 4 + 'vw'; 
+    return Math.floor(Math.random() * 9) + 4 + 'vw'; 
 }
 
-function getRandomPosition(max, centerDistance) {
+function getRandomPosition(max, centerDistance, minDistanceFromCenter) {
     const center = max / 2;
     const minDistance = center - centerDistance;
     const maxDistance = center + centerDistance;
-    
+
     let position;
     do {
         position = Math.random() * max;
-    } while (position >= minDistance && position <= maxDistance);
+    } while (position >= minDistance && position <= maxDistance && Math.abs(position - center) < minDistanceFromCenter);
 
     return position + 'px';
 }
 
+
 function getRandomRotation() {
     return Math.floor(Math.random() * 360);
 }
-
 });
 
 

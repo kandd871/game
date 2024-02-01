@@ -16,7 +16,7 @@ body {
   font-family: 'PP Hatton', serif;
 /*  background: #71E87D;*/
 background: rgb(185,255,192);
-background: linear-gradient(180deg, rgba(185,255,192,1) -29%, rgba(113,232,125,1) 0%, rgba(255,255,255,1) 33%, rgba(221,249,223,1) 57%, rgba(113,232,125,1) 100%);
+background: linear-gradient(180deg, rgba(185,255,192,1) -29%, rgba(252,165,165,1) 0%, rgba(255,255,255,1) 33%, rgba(255,229,229,1) 57%, rgba(252,165,165,1) 100%);
 opacity: 0;
 animation: reveal .3s forwards ease-in;
 }
@@ -79,7 +79,8 @@ h2 {
   display: flex;
   justify-content: center;
   border-radius: 50%;
-  border: 1px solid black;
+  color: gray;
+  border: 1px solid gray;
   width: 5vw;
   padding: .1rem;
   text-align: center;
@@ -192,6 +193,8 @@ button {
   color: gray;
   border: 1px solid gray;
   z-index: 300;
+  cursor: pointer;
+  transition: .2s;
 }
 
 button:hover {
@@ -237,7 +240,9 @@ button:hover {
 
 
 #congrats {
-  align-items: center; /* Add this line to center-align items vertically */
+  display: flex;
+  flex-direction: column; /* Set flex-direction to column */
+  align-items: center;
   justify-content: center;
   text-align: center;
   font-size: 6.5vw;
@@ -245,18 +250,28 @@ button:hover {
   z-index: 400;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* Center horizontally and vertically */
+  transform: translate(-50%, -50%);
   background: #F5F8E8;
   width: 95vw;
   height: 55vh;
   border: 1px solid black;
   border-radius: 3vh;
-  visibility: hidden;
-  opacity: 0;
+   visibility: hidden;
+  opacity: 0; 
   transition: .45s;
- -webkit-box-shadow: 0px 0px 15px 0px rgba(1,134,45,0.89); 
-box-shadow: 0px 0px 15px 0px rgba(1,134,45,0.89);
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(1, 134, 45, 0.89);
+  box-shadow: 0px 0px 15px 0px rgba(1, 134, 45, 0.89);
+  line-height: 1.1;
 }
+p{
+  margin-bottom: 4vh;
+}
+
+
+#link .firstletter{
+  font-size: 6vw;
+}
+
 #cursor{
   width: 9vw;
 }

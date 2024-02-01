@@ -1,35 +1,35 @@
 document.addEventListener('DOMContentLoaded', function () {
     const cardsData = [
-        { "image": "img/a2.png", "framework": 1 },
-        { "image": "img/a3.png", "framework": 2 },
-        { "image": "img/a1.png", "framework": 3 },
-        { "image": "img/j2.png", "framework": 4 },
-        { "image": "img/j3.png", "framework": 5 },
-        { "image": "img/k4.png", "framework": 6 },
-        { "image": "img/k4.png", "framework": 7 },
-        { "image": "img/k4.png", "framework": 8 },
-        { "image": "img/k4.png", "framework": 9 },
-        { "image": "img/k4.png", "framework": 10 },
-        { "image": "img/j3.png", "framework": 11 },
-        { "image": "img/k4.png", "framework": 12 },
-        { "image": "img/k4.png", "framework": 13 },
-        { "image": "img/k4.png", "framework": 14 },
-        { "image": "img/k4.png", "framework": 15 },
-        { "image": "img/a2.png", "framework": 1 },
-        { "image": "img/a3.png", "framework": 2 },
-        { "image": "img/a1.png", "framework": 3 },
-        { "image": "img/j2.png", "framework": 4 },
-        { "image": "img/j3.png", "framework": 5 },
-        { "image": "img/k4.png", "framework": 6 },
-        { "image": "img/k4.png", "framework": 7 },
-        { "image": "img/k4.png", "framework": 8 },
-        { "image": "img/k4.png", "framework": 9 },
-        { "image": "img/k4.png", "framework": 10 },
-        { "image": "img/j3.png", "framework": 11 },
-        { "image": "img/k4.png", "framework": 12 },
-        { "image": "img/k4.png", "framework": 13 },
-        { "image": "img/k4.png", "framework": 14 },
-        { "image": "img/k4.png", "framework": 15 },
+        { "image": "img/31.png", "framework": 1 },
+        { "image": "img/42.png", "framework": 2 },
+        { "image": "img/61.png", "framework": 3 },
+        { "image": "img/a1.png", "framework": 4 },
+        { "image": "img/a2.png", "framework": 5 },
+        { "image": "img/a3.png", "framework": 6 },
+        { "image": "img/k2.png", "framework": 7 },
+        { "image": "img/k3.png", "framework": 8 },
+        { "image": "img/q2.png", "framework": 9 },
+        { "image": "img/72.png", "framework": 10 },
+        { "image": "img/83.png", "framework": 11 },
+        { "image": "img/94.png", "framework": 12 },
+        { "image": "img/j1.png", "framework": 13 },
+        { "image": "img/j4.png", "framework": 14 },
+        { "image": "img/q4.png", "framework": 15 },
+        { "image": "img/31.png", "framework": 1 },
+        { "image": "img/42.png", "framework": 2 },
+        { "image": "img/61.png", "framework": 3 },
+        { "image": "img/a1.png", "framework": 4 },
+        { "image": "img/a2.png", "framework": 5 },
+        { "image": "img/a3.png", "framework": 6 },
+        { "image": "img/k2.png", "framework": 7 },
+        { "image": "img/k3.png", "framework": 8 },
+        { "image": "img/q2.png", "framework": 9 },
+        { "image": "img/72.png", "framework": 10 },
+        { "image": "img/83.png", "framework": 11 },
+        { "image": "img/94.png", "framework": 12 },
+        { "image": "img/j1.png", "framework": 13 },
+        { "image": "img/j4.png", "framework": 14 },
+        { "image": "img/q4.png", "framework": 15 }
     ];
 
     const memoryGameContainer = document.querySelector('.memory-game');
@@ -258,28 +258,29 @@ function addRandomSpark() {
     sparkImage.style.opacity = '0.8';
     sparkImage.style.width = getRandomSize();
     sparkImage.style.height = getRandomSize();
-    sparkImage.style.top = getRandomPosition(window.innerHeight);
-    sparkImage.style.left = getRandomPosition(window.innerWidth,200);
+    sparkImage.style.top = getRandomPosition(window.innerHeight, 200, 100);
+    sparkImage.style.left = getRandomPosition(window.innerWidth, 300, 125);
     sparkImage.style.transform = `rotate(${getRandomRotation()}deg)`;
     document.body.appendChild(sparkImage);
 }
 
 function getRandomSize() {
-    return Math.floor(Math.random() * 10) + 4 + 'vw'; 
+    return Math.floor(Math.random() * 4) + 4 + 'vw'; 
 }
 
-function getRandomPosition(max, centerDistance) {
+function getRandomPosition(max, centerDistance, minDistanceFromCenter) {
     const center = max / 2;
     const minDistance = center - centerDistance;
     const maxDistance = center + centerDistance;
-    
+
     let position;
     do {
         position = Math.random() * max;
-    } while (position >= minDistance && position <= maxDistance);
+    } while (position >= minDistance && position <= maxDistance && Math.abs(position - center) < minDistanceFromCenter);
 
     return position + 'px';
 }
+
 
 function getRandomRotation() {
     return Math.floor(Math.random() * 360);
