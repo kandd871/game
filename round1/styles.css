@@ -53,7 +53,7 @@ animation: reveal .3s forwards ease-in;
 
 h1 {
   font-style: italic;
-  font-weight: 500;
+  font-weight: 300;
   font-size: 7vh;
   margin-bottom: -2vh;
   text-decoration: underline;
@@ -293,6 +293,11 @@ p{
 
 #link:hover{
   color: #a2cffa;
+}
+
+a{
+   font-weight: 300;
+   transition: .2s;
 }
 
 @keyframes reveal{

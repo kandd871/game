@@ -57,6 +57,7 @@ h1 {
   font-size: 7vh;
   margin-bottom: -2vh;
   text-decoration: underline;
+     font-weight: 300;
 }
 
 h2 {
@@ -254,8 +255,8 @@ button:hover {
   height: 55vh;
   border: 1px solid black;
   border-radius: 3vh;
-  /* visibility: hidden;
-  opacity: 0; */
+   visibility: hidden;
+  opacity: 0; 
   transition: .45s;
   -webkit-box-shadow: 0px 0px 15px 0px rgba(1, 134, 45, 0.89);
   box-shadow: 0px 0px 15px 0px rgba(1, 134, 45, 0.89);
@@ -293,6 +294,11 @@ p{
 
 #link .firstletter{
   font-size: 6vw;
+}
+
+a{
+  font-weight: 300;
+  transition: .2s;
 }
 
 

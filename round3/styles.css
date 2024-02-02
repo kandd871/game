@@ -57,6 +57,7 @@ h1 {
   font-size: 7vh;
   margin-bottom: -2vh;
   text-decoration: underline;
+     font-weight: 300;
 }
 
 h2 {
@@ -73,6 +74,7 @@ h2 {
   display: block;
   justify-content: center;
   margin-left: -2vw;
+   font-weight: 300;
 }
 
 #timer {
@@ -256,7 +258,7 @@ button:hover {
   height: 55vh;
   border: 1px solid black;
   border-radius: 3vh;
-   visibility: hidden;
+  visibility: hidden;
   opacity: 0; 
   transition: .45s;
   -webkit-box-shadow: 0px 0px 15px 0px rgba(1, 134, 45, 0.89);
@@ -292,10 +294,15 @@ p{
 #link{
   font-size: 5vw;
   color: gray;
+  transition: .2s;
 }
 
 #link:hover{
   color: #71E87D;
+}
+
+a{
+   font-weight: 300;
 }
 
 @keyframes reveal{
