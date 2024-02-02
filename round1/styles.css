@@ -11,9 +11,9 @@ font-style: normal;
 }
 
 body {
-  height: 100vh;
-  width: 100vw;
-  font-family: 'PP Hatton', serif;
+height: 100vh;
+width: 100vw;
+font-family: 'PP Hatton', serif;
 /*  background: #71E87D;*/
 background: rgb(185,255,192);
 background: linear-gradient(180deg, rgba(185,255,192,1) -29%, rgba(113,232,125,1) 0%, rgba(255,255,255,1) 33%, rgba(221,249,223,1) 57%, rgba(113,232,125,1) 100%);
@@ -127,8 +127,8 @@ transition: .7s;
   transform-style: preserve-3d;
   transform: scale(1);
   transition: transform .5s;
-  -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.9); 
-  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.9);
+  -webkit-box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.75); 
+  box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.75);
   border-radius: 2vh;
 }
 
@@ -257,7 +257,7 @@ p{
   height: 55vh;
   border: 1px solid black;
   border-radius: 3vh;
-   visibility: hidden;
+  visibility: hidden;
   opacity: 0; 
   transition: .45s;
   -webkit-box-shadow: 0px 0px 15px 0px rgba(1, 134, 45, 0.89);
@@ -299,6 +299,20 @@ a{
    font-weight: 300;
    transition: .2s;
 }
+
+#close{
+  margin-top: -3vh;
+  display: flex;
+  width: 95%;
+  justify-content: left;
+  text-align: left;
+  font-weight: 100;
+  font-family: sans-serif;
+}
+
+ .close{
+  font-size: 2.5vh!important;
+ }
 
 @keyframes reveal{
   from{

@@ -262,6 +262,14 @@ function getRandomPosition(max, centerDistance, minDistanceFromCenter) {
 function getRandomRotation() {
     return Math.floor(Math.random() * 360);
 }
+
+var closeButton = document.getElementById('close');
+var congrats = document.getElementById('congrats');
+    function close(){
+        congrats.style.display = 'none';
+    }
+
+    closeButton.addEventListener('click', close);
 });
 
 
